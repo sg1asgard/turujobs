@@ -26,6 +26,12 @@
         >
           Terms of Service
         </NuxtLink>
+        <NuxtLink 
+          class="underline" 
+          href="/resources/disclaimer"
+        >
+          Disclaimer
+        </NuxtLink>
       </div>
 
     </div>
