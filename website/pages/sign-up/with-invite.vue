@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { useAsyncValidator } from "@vueuse/integrations/useAsyncValidator";
+import type { Rules } from "async-validator";
+
 useHead({
-  title: "TuruJobs: Reach new horizons",
+  title: "Welcome to TuruJobs.",
   meta: [
     {
       name: "description",
@@ -9,6 +12,45 @@ useHead({
     },
   ],
 });
+
+const form = reactive({
+  email: '',
+  inviteCode: '',
+  acceptedTermsOfService: false
+})
+
+const rules: Rules = {
+  email: {
+    type: "email",
+    required: true,
+    message: 'Please enter your company email'
+  },
+  inviteCode: {
+    type: 'string',
+    required: true,
+    message: "Invite code invalid, reach us at help@turujobs.com if you've lose your invite code."
+  },
+  acceptedTermsOfService: {
+    type: 'boolean',
+    asyncValidator: async (_r, v) => {
+
+      if(!v) throw new Error('Please accept terms of service')
+
+    },
+    required: true
+  }
+}
+
+const { errors, errorFields, execute, pass } = useAsyncValidator(form, rules, { manual: true });
+
+async function submit() {
+
+  await execute()
+
+  console.log(pass.value)
+  
+}
+
 </script>
 
 <template>
@@ -30,7 +72,7 @@ useHead({
 
         <div class="mt-10">
           <div>
-            <form action="#" method="POST" class="space-y-6">
+            <div class="space-y-6">
 
               <div>
                 <label
@@ -41,11 +83,19 @@ useHead({
                 <div class="mt-2">
                   <input
                     id="invite-code"
+                    v-model="form.inviteCode"
                     name="invite-code"
                     type="invite-code"
+                    placeholder="xxxx-xxxx-xxxx"
                     required
-                    class="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
+                    class="block px-2 w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
                   />
+                </div>
+                <div 
+                  class="text-sm text-red mt-2"
+                  v-if="errorFields?.inviteCode?.length"
+                >
+                  {{ errorFields.inviteCode[0].message }}
                 </div>
               </div>
 
@@ -53,34 +103,49 @@ useHead({
                 <label
                   for="email"
                   class="block text-sm font-medium leading-6 text-gray-900"
-                  >Email address</label
+                  >Company Email address</label
                 >
                 <div class="mt-2">
                   <input
                     id="email"
+                    v-model="form.email"
                     name="email"
                     type="email"
                     autocomplete="email"
+                    placeholder="john.doe@company.com"
                     required
-                    class="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
+                    class="block w-full px-2 rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
                   />
+                </div>
+                <div 
+                  class="text-sm text-red mt-2"
+                  v-if="errorFields?.email?.length"
+                >
+                  {{ errorFields.email[0].message }}
                 </div>
               </div>
 
-              <div class="flex items-center justify-between">
-                <div class="flex items-center">
+              <div class="w-full">
+                <div class="flex items-center w-full">
                   <input
-                    id="remember-me"
-                    name="remember-me"
+                    id="accepted-terms-of-service"
+                    name="accepted-terms-of-service"
                     type="checkbox"
+                    v-model="form.acceptedTermsOfService"
                     class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-600"
                   />
                   <label
-                    for="remember-me"
+                    for="accepted-terms-of-service"
                     class="ml-3 block text-sm leading-6 text-gray-700"
                   >
-                    I accept <NuxtLink class="text-gray-900 underline" href="/" >Terms of Service</NuxtLink>
+                    I accept <NuxtLink class="text-gray-900 underline" href="/resources/terms-of-service" target="_blank" >Terms of Service</NuxtLink>
                   </label>
+                </div>
+                <div 
+                  class="text-sm text-red mt-2"
+                  v-if="errorFields?.acceptedTermsOfService?.length"
+                >
+                  {{ errorFields.acceptedTermsOfService[0].message }}
                 </div>
               </div>
 
@@ -88,6 +153,7 @@ useHead({
                 <button
                   type="submit"
                   class="rounded-full group/button bg-gray-900 text-white w-full px-8 py-4 text-sm font-medium shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-400"
+                  @click="submit"
                 >
                   Next
                   <span
@@ -98,7 +164,7 @@ useHead({
                   </span>
                 </button>
               </div>
-            </form>
+            </div>
           </div>
 
         </div>

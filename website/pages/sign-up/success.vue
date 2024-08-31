@@ -1,27 +1,4 @@
-<script setup lang="ts"
->
-useHead({
-  title: "Welcome to TuruJobs.",
-  meta: [
-    {
-      name: "description",
-      content:
-        "Connect with an audience of 230,000+ highly skilled designers and developers directly from design & development communities.",
-    },
-  ],
-});
-
-import dayjs from 'dayjs';
-
-const launch = dayjs('2024-09-10')
-
-const timeLeftTillLaunch = ref<ReturnType<typeof dayjs.duration>>(dayjs.duration(launch.diff(dayjs())))
-
-useRafFn(() => {
-
-  timeLeftTillLaunch.value = dayjs.duration(launch.diff(dayjs()))
-
-}, { fpsLimit: 16 })
+<script setup lang="ts" >
 
 </script>
 
