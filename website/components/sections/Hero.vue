@@ -47,15 +47,16 @@ useRafFn(() => {
             </p>
             <div class="mt-10 flex items-center justify-center gap-6 lt-sm:flex-col">
               <a
-                href="#"
-                class="rounded-full group/button bg-gray-900 text-blue-100 px-8 py-4 text-sm font-medium shadow-sm hover:scale-102 duration-300 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                href="/early-registration"
+                class="rounded-full group/button bg-gray-900 text-blue-100 px-8 py-4 text-sm font-medium shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-400"
               >
-                Sign in with Invite Code
+                Sign up with Invite Code
                 <span
                   class="group-hover/button:translate-x-.5 duration-300 ease-in-out inline-block"
                   aria-hidden="true"
-                  >→</span
                 >
+                  →
+                </span>
               </a>
               <a href="#" class="text-sm font-semibold leading-6">
                 Learn more <span aria-hidden="true">→</span>

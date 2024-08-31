@@ -21,7 +21,7 @@ useHead({
     lang: "en",
   },
   bodyAttrs: {
-    class: "antialiased font-primary sm:text-lg text-gray-800 bg-blue-50",
+    class: "antialiased font-primary sm:text-lg text-gray-800 bg-white",
   },
 });
 
