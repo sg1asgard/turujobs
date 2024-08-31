@@ -4,7 +4,7 @@ const code = 'SUPERCODE20'
 
 const schema = z.object({
   email: z.string().email({ message: 'email.invalid' }),
-  inviteCode: z.string().refine(v => v === code, { message: 'code.invalid' }),
+  inviteCode: z.string().transform((v) => v.toUpperCase()).refine(v => v === code, { message: 'code.invalid' }),
   acceptedTermsOfService: z.boolean().refine(v => !!v, { message: 'termsOfService.notAccepted' })
 }).required()
 
