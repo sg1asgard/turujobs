@@ -1,5 +1,15 @@
 <script setup lang="ts" >
 
+const hasSignedUpWithInviteCode = useLocalStorage('has-signed-up-with-invite-code', '')
+
+onMounted(() => {
+
+  watch(hasSignedUpWithInviteCode, (v) => {
+    if(v.length === 0) navigateTo('/sign-up/with-invite')
+  }, { immediate: true })
+
+})
+
 </script>
 
 <template>
@@ -12,10 +22,10 @@
           <h2
             class="mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900"
           >
-            Welcome. You're in!
+            <span class="i-tdesign:loading h-8 w-8 inline-block mr-1 animate-spin animate-duration-1000" ></span><br /> All done! We'll let you in soon.
           </h2>
           <p class="mt-2 text-sm leading-6 text-gray-500">
-            Once we're nearing launch we'll reach out via email & linkedin and help you with onboarding.
+            We'll be reaching out soon via email and help you with onboarding.
           </p>
           <div class="mt-6 ring-1 ring-inset ring-gray-500/20 rounded-4 p-6" >
             <div class="text-xs font-medium text-gray-400 mb-1" >
@@ -23,6 +33,9 @@
             </div>
             <div class="text-3xl font-bold text-gray-900" >
               $200
+            </div>
+            <div class="text-xs font-medium text-gray-400 mt-1" >
+              {{ hasSignedUpWithInviteCode }}
             </div>
           </div>
         </div>

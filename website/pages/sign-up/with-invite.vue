@@ -2,6 +2,12 @@
 import { useAsyncValidator } from "@vueuse/integrations/useAsyncValidator";
 import type { Rules } from "async-validator";
 
+const hasSignedUpWithInviteCode = useLocalStorage('has-signed-up-with-invite-code', '')
+
+watch(hasSignedUpWithInviteCode, (v) => {
+  if(v.length > 0) navigateTo('/sign-up/success')
+}, { immediate: true })
+
 useHead({
   title: "Welcome to TuruJobs.",
   meta: [
@@ -41,13 +47,29 @@ const rules: Rules = {
   }
 }
 
-const { errors, errorFields, execute, pass } = useAsyncValidator(form, rules, { manual: true });
+const { errorFields, execute: executeAsyncValidate, pass } = useAsyncValidator(form, rules, { manual: true });
+const codeIsIncorrect = ref(false)
 
 async function submit() {
 
-  await execute()
+  await executeAsyncValidate()
 
-  console.log(pass.value)
+  if(!pass.value) return 
+
+  const res = await $fetch('/api/sign-up-with-invite', {
+    method: 'POST',
+    body: form
+  })
+
+  if(res.success) {
+
+    hasSignedUpWithInviteCode.value = form.email
+
+  } else {
+
+    codeIsIncorrect.value = true
+    
+  }
   
 }
 
@@ -96,6 +118,12 @@ async function submit() {
                   v-if="errorFields?.inviteCode?.length"
                 >
                   {{ errorFields.inviteCode[0].message }}
+                </div>
+                <div 
+                  class="text-sm text-red mt-2"
+                  v-else-if="codeIsIncorrect"
+                >
+                  Invite code invalid, reach us at help@turujobs.com if you've lose your invite code.
                 </div>
               </div>
 
