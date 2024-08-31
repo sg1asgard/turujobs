@@ -46,8 +46,8 @@ useRafFn(() => {
               developers directly from design & development communities.
             </p>
             <div class="mt-10 flex items-center justify-center gap-6 lt-sm:flex-col">
-              <a
-                href="/early-registration"
+              <NuxtLink
+                href="/sign-up/with-invite"
                 class="rounded-full group/button bg-gray-900 text-blue-100 px-8 py-4 text-sm font-medium shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-400"
               >
                 Sign up with Invite Code
@@ -57,10 +57,10 @@ useRafFn(() => {
                 >
                   →
                 </span>
-              </a>
-              <a href="#" class="text-sm font-semibold leading-6">
+              </NuxtLink>
+              <NuxtLink href="#" class="text-sm font-semibold leading-6">
                 Learn more <span aria-hidden="true">→</span>
-              </a>
+              </NuxtLink>
             </div>
           </div>
         </div>

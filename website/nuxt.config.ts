@@ -4,7 +4,14 @@ import { BREAKPOINTS } from "./consts";
 export default defineNuxtConfig({
   compatibilityDate: '2024-08-31',
   devtools: { enabled: true },
-  modules: ['@vueuse/nuxt', '@unocss/nuxt', '@pinia/nuxt', '@nuxt/image', 'nuxt-delay-hydration'],
+  modules: [
+    '@vueuse/nuxt',
+    '@unocss/nuxt',
+    '@pinia/nuxt',
+    '@nuxt/image',
+    'nuxt-delay-hydration',
+    '@nuxt/content'
+  ],
   image: {
     screens: BREAKPOINTS
   },

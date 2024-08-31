@@ -28,9 +28,9 @@ useHead({
 </script>
 
 <template>
-  <a class="not-focus:sr-only focus:(z-10000 absolute)" href="#content">
+  <NuxtLink class="not-focus:sr-only focus:(z-10000 absolute)" href="#content">
     Skip to content
-  </a>
+  </NuxtLink>
   <Header />
   <main 
     id="content" 

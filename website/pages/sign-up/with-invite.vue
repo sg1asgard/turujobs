@@ -79,7 +79,7 @@ useHead({
                     for="remember-me"
                     class="ml-3 block text-sm leading-6 text-gray-700"
                   >
-                    I accept <a class="text-gray-900 underline" href="/" >Terms of Service</a>
+                    I accept <NuxtLink class="text-gray-900 underline" href="/" >Terms of Service</NuxtLink>
                   </label>
                 </div>
               </div>
