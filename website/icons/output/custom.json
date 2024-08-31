@@ -1,0 +1,11 @@
+{
+	"prefix": "custom",
+	"lastModified": 1725093144,
+	"icons": {
+		"deleteme": {
+			"body": "<path fill=\"currentColor\" d=\"M0 0h400v400H0z\"/>",
+			"width": 400,
+			"height": 400
+		}
+	}
+}
