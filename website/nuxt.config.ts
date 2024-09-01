@@ -22,5 +22,8 @@ export default defineNuxtConfig({
   },
   experimental: {
     componentIslands: true
+  },
+  runtimeConfig: {
+    dbJsonPath: ''
   }
 })
