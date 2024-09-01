@@ -25,8 +25,12 @@ const defaultData: DatabaseSchema = {
 
 const config = useRuntimeConfig()
 
+console.log(resolve(config.dbJsonPath))
+
 const _db = new LowSync<DatabaseSchema>(new JSONFileSync(resolve(config.dbJsonPath)), defaultData)
 _db.read()
+
+console.log(_db)
 
 const useDb = () => _db
 
