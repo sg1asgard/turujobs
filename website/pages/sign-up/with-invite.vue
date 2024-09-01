@@ -2,10 +2,10 @@
 import { useAsyncValidator } from "@vueuse/integrations/useAsyncValidator";
 import type { Rules } from "async-validator";
 
-const hasSignedUpWithInviteCode = useLocalStorage('has-signed-up-with-invite-code', '')
+const hasSignedUpWithInviteCode = useLocalStorage<boolean>('has-signed-up-with-invite-code', false)
 
 watch(hasSignedUpWithInviteCode, (v) => {
-  if(v.length > 0) navigateTo('/sign-up/success')
+  if(v) navigateTo('/sign-up/success')
 }, { immediate: true })
 
 useHead({
@@ -56,20 +56,36 @@ async function submit() {
 
   if(!pass.value) return 
 
-  const res = await $fetch('/api/sign-up-with-invite', {
-    method: 'POST',
-    body: form
-  })
+  try {
 
-  if(res.success) {
+    const res = await $fetch('/api/sign-up-with-invite', {
+      method: 'POST',
+      body: form
+    })
 
-    hasSignedUpWithInviteCode.value = form.email
+    if(res.success) {
 
-  } else {
+      localStorage.setItem('early-sign-up-data', JSON.stringify({
+        email: form.email,
+        invite_code: form.inviteCode,
+        referral_code: res.referral_code
+      }))
+
+      hasSignedUpWithInviteCode.value = true
+
+    } else {
+
+      codeIsIncorrect.value = true
+      
+    }    
+    
+  } catch(e) {
 
     codeIsIncorrect.value = true
-    
+
   }
+
+
   
 }
 
