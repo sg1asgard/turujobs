@@ -15,10 +15,6 @@ export default defineNuxtConfig({
   image: {
     screens: BREAKPOINTS
   },
-  nitro: {
-    preset: 'static',
-    
-  },
   delayHydration: {
     mode: 'init',
     replayClick: true,
