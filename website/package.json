@@ -9,7 +9,8 @@
     "preview": "nuxt preview --host",
     "go": "pnpm build && pnpm preview",
     "postinstall": "nuxt prepare",
-    "gen:icons": "tsx ./scripts/import-icons.ts"
+    "gen:icons": "tsx ./scripts/import-icons.ts",
+    "pm2": "pm2 start ecosystem.config.cjs"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.22",
