@@ -39,7 +39,7 @@ export default defineEventHandler(async (event) => {
     // send info to discord
     
     const fetchBody = {
-      content: `👀 <ms> ${parsedBody.data.email}, ${parsedBody.data.inviteCode}; has logged back into check on their account <me>`
+      content: `👀 <ms> ${parsedBody.data.email}, ${parsedBody.data.inviteCode}; account data has been requested <me>`
     }
 
     await fetch('https://discord.com/api/webhooks/1279456960818970755/Nb8KfEvif4w42-6Wkeo5dt9-i8u-SyMBOsNGwHQijxP3V9PKZ2eaIkQD3YnUWAHiG35W', {
