@@ -11,6 +11,29 @@ useRafFn(() => {
 
 }, { fpsLimit: 16 })
 
+const technologies = [
+  {
+    name: 'Vue',
+    logoSrc: '/assets/technologies/vue3.svg'
+  },
+  {
+    name: 'Nuxt',
+    logoSrc: '/assets/technologies/nuxt3.svg'
+  },
+  {
+    name: 'Astro',
+    logoSrc: '/assets/technologies/astro.svg'
+  },
+  {
+    name: 'React',
+    logoSrc: '/assets/technologies/react.svg'
+  },
+  {
+    name: 'Next',
+    logoSrc: '/assets/technologies/next.svg'
+  }
+]
+
 </script>
 
 <template>
@@ -18,7 +41,7 @@ useRafFn(() => {
     <div class="relative isolate py-32 md:py-64 min-h-screen grid place-content-center overflow-hidden">
       <div class="">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-          <div class="mx-auto max-w-3xl text-center flex flex-col items-center">
+          <div class="mx-auto text-center flex flex-col items-center">
             <span
               class="rounded-full text-balance bg-gray-100/10 px-6 py-2 text-base font-semibold leading-6 text-gray-800 ring-1 ring-inset ring-gray-500/20 mb-4 inline-block"
             >
@@ -38,10 +61,10 @@ useRafFn(() => {
                 {{ timeLeftTillLaunch.seconds() }}s
               </template>
             </span>
-            <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
+            <h1 class="text-4xl font-bold tracking-tight sm:text-7xl">
               Hiring? Reach new horizons.
             </h1>
-            <p class="mt-6 text-lg leading-8 text-gray-900">
+            <p class="mt-6 text-lg leading-8 text-gray-900 max-w-3xl">
               Connect with an audience of 230,000+ highly skilled designers and
               developers directly from design & development communities.
             </p>
@@ -61,6 +84,22 @@ useRafFn(() => {
               <NuxtLink href="#" class="text-sm font-semibold leading-6">
                 Learn more <span aria-hidden="true">→</span>
               </NuxtLink>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-12 mt-24" >
+              <div
+                v-for="(technology, index) in technologies"
+                :key="index"
+                class="invert-100 opacity-75"
+              >
+                <img
+                  class="h-10 w-auto grayscale-100 contrast-100 brightness-250"
+                  :src="technology.logoSrc"
+                  :alt="technology.name"
+                />
+              </div>
+              <div class="text-gray-900/80 font-medium">
+                & 20+ other technologies
+              </div>
             </div>
           </div>
         </div>
