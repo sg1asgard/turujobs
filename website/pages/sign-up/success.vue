@@ -35,7 +35,7 @@ const { data, status, refresh } = await useAsyncData(
   }
 )
 
-useIntervalFn(refresh, 60_000)
+useIntervalFn(refresh, 120_000)
 
 </script>
 
