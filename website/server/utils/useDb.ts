@@ -23,7 +23,9 @@ const defaultData: DatabaseSchema = {
   users: []
 }
 
-const _db = new LowSync<DatabaseSchema>(new JSONFileSync(resolve('./database/db.json')), defaultData)
+const config = useRuntimeConfig()
+
+const _db = new LowSync<DatabaseSchema>(new JSONFileSync(resolve(config.dbJsonPath)), defaultData)
 _db.read()
 
 const useDb = () => _db
