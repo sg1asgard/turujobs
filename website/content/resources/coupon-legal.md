@@ -19,19 +19,19 @@ The Services are intended for users who are at least 18 years old. Persons under
 We recommend that you print a copy of these Legal Terms for your records.
 <p style="padding: 42px;">&nbsp;</p>
 
-1. **Coupon Eligibility**: The coupon is available to companies who register on our website (www.turujobs.com) and activate the coupon by September 15, 2024. The coupon offers $200 worth of job postings. Please note, the use of this coupon is at your own discretion and risk.
+1. **Coupon Eligibility**: Coupons are available to companies who register on our website (www.turujobs.com) and activate their coupon by September 15, 2024. The coupon offers specified amount worth of job postings. Please note, the use of coupons is at your own discretion and risk.
 <p>&nbsp;</p>
 
-2. **Coupon Use**: The coupon can be used for job postings only and has no cash value. Unused portions of the coupon cannot be carried forward. We do not guarantee any specific results from the use of this coupon.
+2. **Coupon Use**: Coupons can be used for job postings only and has no cash value. Unused portions of the coupon cannot be carried forward. We do not guarantee any specific results from the use of this coupon.
 <p>&nbsp;</p>
 
-3. **Changes to Terms**: ColoredAtom SRL reserves the right to change the terms of this coupon campaign, including the coupon value, eligibility, and validity period, without notice.
+3. **Changes to Terms**: ColoredAtom SRL reserves the right to change the terms of this coupon campaign, including but not limited to the coupon value, eligibility, and validity period, without notice.
 <p>&nbsp;</p>
 
-4. **User Representations**: By using the coupon, you represent that you are at least 18 years old and agree that this is a promotional offer without any warranties or guarantees. You agree to hold ColoredAtom SRL harmless from any and all losses, damages, rights, claims, and actions of any kind in connection with the coupon or your use of the Services.
+4. **User Representations**: By using and sharing coupons, you represent that you are at least 18 years old and agree that this is a promotional offer without any warranties or guarantees. You agree to hold ColoredAtom SRL harmless from any and all losses, damages, rights, claims, and actions of any kind in connection with the coupon or your use of the Services.
 <p>&nbsp;</p>
 
-5. **Intellectual Property**: All content on our website, including the coupon, is protected by copyright and trademark laws. You may not copy, reproduce, or exploit the coupon or content for any commercial purpose.
+5. **Intellectual Property**: All content on our website, including coupons, is protected by copyright and trademark laws. You may not copy, reproduce, or exploit the coupon or content for any commercial purpose.
 <p>&nbsp;</p>
 
 6. **Disputes**: Any disputes arising out of this coupon campaign will be governed by the laws of Romania. By using this coupon, you agree that ColoredAtom SRL and its affiliates, officers, agents, and employees shall not be liable for any direct, indirect, incidental, special, or consequential damages arising out of the use of the coupon or the Services.

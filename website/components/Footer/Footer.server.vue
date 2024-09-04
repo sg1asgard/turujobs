@@ -16,13 +16,13 @@
       <div class="flex gap-6 text-sm" >
         <NuxtLink 
           class="underline" 
-          href="/resources/terms-of-service"
+          href="/resources/privacy-policy"
         >
           Privacy Policy
         </NuxtLink>
         <NuxtLink 
           class="underline" 
-          href="/resources/privacy-policy"
+          href="/resources/terms-of-service"
         >
           Terms of Service
         </NuxtLink>
@@ -36,7 +36,7 @@
           class="underline" 
           href="/resources/coupon-legal"
         >
-          Coupons Service
+          Coupons Terms of Service
         </NuxtLink>
       </div>
 

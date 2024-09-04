@@ -22,7 +22,7 @@ useHead({
 const form = reactive({
   email: '',
   inviteCode: '',
-  acceptedTermsOfService: false
+  acceptedTerms: false
 })
 
 const rules: Rules = {
@@ -36,7 +36,7 @@ const rules: Rules = {
     required: true,
     message: "Invite code invalid, reach us at help@turujobs.com if you've lose your invite code."
   },
-  acceptedTermsOfService: {
+  acceptedTerms: {
     type: 'boolean',
     asyncValidator: async (_r, v) => {
 
@@ -172,24 +172,52 @@ async function submit() {
               <div class="w-full">
                 <div class="flex items-center w-full">
                   <input
-                    id="accepted-terms-of-service"
-                    name="accepted-terms-of-service"
+                    id="accepted-terms"
+                    name="accepted-terms"
                     type="checkbox"
-                    v-model="form.acceptedTermsOfService"
+                    v-model="form.acceptedTerms"
                     class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-600"
                   />
                   <label
-                    for="accepted-terms-of-service"
+                    for="accepted-terms"
                     class="ml-3 block text-sm leading-6 text-gray-700"
                   >
-                    I accept <NuxtLink class="text-gray-900 underline" href="/resources/terms-of-service" target="_blank" >Terms of Service</NuxtLink>
+                    I accept 
+                      <NuxtLink 
+                        class="text-gray-900 underline" 
+                        href="/resources/terms-of-service" 
+                        target="_blank" 
+                      >
+                        Terms of Service
+                      </NuxtLink>,
+                      <NuxtLink 
+                        class="text-gray-900 underline" 
+                        href="/resources/disclaimer" 
+                        target="_blank" 
+                      >
+                        Disclaimer
+                      </NuxtLink>,
+                      <NuxtLink 
+                        class="text-gray-900 underline" 
+                        href="/resources/coupon-legal" 
+                        target="_blank" 
+                      >
+                        Coupon Terms of Service
+                      </NuxtLink>,
+                      <NuxtLink 
+                        class="text-gray-900 underline" 
+                        href="/resources/privacy-policy" 
+                        target="_blank" 
+                      >
+                        Privacy Policy
+                      </NuxtLink>
                   </label>
                 </div>
                 <div 
                   class="text-sm text-red mt-2"
-                  v-if="errorFields?.acceptedTermsOfService?.length"
+                  v-if="errorFields?.acceptedTerms?.length"
                 >
-                  {{ errorFields.acceptedTermsOfService[0].message }}
+                  {{ errorFields.acceptedTerms[0].message }}
                 </div>
               </div>
 

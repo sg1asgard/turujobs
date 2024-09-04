@@ -5,7 +5,7 @@ import checkInviteCode from '../utils/checkInviteCode'
 const schema = z.object({
   email: z.string().email({ message: 'email.invalid' }),
   inviteCode: z.string({ message: 'inviteCode.error' }).transform((v) => v.toUpperCase()),
-  acceptedTermsOfService: z.boolean().refine(v => !!v, { message: 'termsOfService.notAccepted' })
+  acceptedTerms: z.boolean().refine(v => !!v, { message: 'terms.notAccepted' })
 }).required()
 
 const db = useDb()
