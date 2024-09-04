@@ -22,9 +22,9 @@ interface Codes {
 const codes: Codes = {
   global: [
     {
-      code: 'SUPERCODE20',
+      code: 'LINKEDIN280',
       value: {
-        receiver: 200
+        receiver: 280
       }
     }
   ],
