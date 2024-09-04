@@ -32,6 +32,12 @@
         >
           Disclaimer
         </NuxtLink>
+        <NuxtLink 
+          class="underline" 
+          href="/resources/coupon-legal"
+        >
+          Coupons Service
+        </NuxtLink>
       </div>
 
     </div>
