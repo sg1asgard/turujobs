@@ -30,8 +30,8 @@ const codes: Codes = {
   ],
   affiliate: {
     value: {
-      receiver: 100,
-      sender: 10
+      receiver: 140,
+      sender: 60
     }
   }
 }
