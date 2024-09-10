@@ -19,7 +19,7 @@ The Services are intended for users who are at least 18 years old. Persons under
 We recommend that you print a copy of these Legal Terms for your records.
 <p style="padding: 42px;">&nbsp;</p>
 
-1. **Coupon Eligibility**: Coupons are available to companies who register on our website (www.turujobs.com) and activate their coupon by September 15, 2024. The coupon offers specified amount worth of job postings. Please note, the use of coupons is at your own discretion and risk.
+1. **Coupon Eligibility**: Coupons are available to companies who register on our website (www.turujobs.com) and activate their coupon by September 20, 2024. The coupon offers specified amount worth of job postings. Please note, the use of coupons is at your own discretion and risk.
 <p>&nbsp;</p>
 
 2. **Coupon Use**: Coupons can be used for job postings only and has no cash value. Unused portions of the coupon cannot be carried forward. We do not guarantee any specific results from the use of this coupon.

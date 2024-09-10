@@ -46,7 +46,7 @@ const technologies = [
               class="rounded-full text-balance bg-gray-100/10 px-6 py-2 text-base font-semibold leading-6 text-gray-800 ring-1 ring-inset ring-gray-500/20 mb-4 inline-block"
             >
               <span class="opacity-70 font-normal" >
-                Launching Sept 15, 2024 /
+                Launching Oct 15, 2024 /
               </span>
               <template v-if="timeLeftTillLaunch.days()" >
                 {{ timeLeftTillLaunch.days() }}d, 
